@@ -1,0 +1,44 @@
+{
+  "review_date": "2026-11-17",
+  "assessed_source_revision": "790aae86bb358d46a2a9c01b9f914eabf1bf21ac",
+  "checkout_revision_at_run": "790aae86bb358d46a2a9c01b9f914eabf1bf21ac",
+  "python_version": "3.11.15",
+  "source_sha256": {
+    "程序文件/TULA_Robot_Workspace/lerobot_robot_tula/src/lerobot_robot_tula/config.py": "d7749ceea05975b04f6c6904941d37f9ae20262a658a3dc81e4653808a0812b3",
+    "程序文件/TULA_Robot_Workspace/lerobot_robot_tula/src/lerobot_robot_tula/controller.py": "17c41ac35459fc4ac8968449d63c55df7b9b7924ed34a081d5d4683a16fb4f51",
+    "程序文件/TULA_Robot_Workspace/lerobot_robot_tula/src/lerobot_robot_tula/robot.py": "3bf12635d960f99340a4eb6e9337fe7ee4acb586c99d50da3dd7c2e131a502a7",
+    "程序文件/TULA_Robot_Workspace/lerobot_robot_tula/src/lerobot_robot_tula/td201_driver.py": "8795f8ecd379ecb98a8e31b409917eb83bae500a04c03e7ff6017762834862dc"
+  },
+  "cases": [
+    {
+      "id": "R1",
+      "scenario": "Axis reports running while position enters tolerance",
+      "reported_success": true,
+      "fake_status": "0x8000 MOTOR_RUNNING",
+      "target_counts": 200,
+      "status_queries": 1,
+      "issue_reproduced": true
+    },
+    {
+      "id": "R2",
+      "scenario": "An axis leaves tolerance after its first successful sample",
+      "reported_success": true,
+      "target_counts_each_axis": 200,
+      "final_fake_read_counts": {
+        "1": 240,
+        "2": 200
+      },
+      "issue_reproduced": true
+    },
+    {
+      "id": "R3",
+      "scenario": "stop() waits for move_and_wait() to release the same instance lock",
+      "stop_blocked_during_wait": true,
+      "stop_reached_fake_driver_after_release": true,
+      "scope": "Python lock behavior only; not physical stop latency",
+      "issue_reproduced": true
+    }
+  ],
+  "real_dll_or_serial_used": false,
+  "result_meaning": "Three baseline defects reproduced with simulated inputs; not product acceptance."
+}
