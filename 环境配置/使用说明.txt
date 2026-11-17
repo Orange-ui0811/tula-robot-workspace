@@ -1,0 +1,65 @@
+WSL2 + Ubuntu 24.04 + ROS2 Jazzy 使用说明
+
+环境位置
+  Windows 发行版名称：Ubuntu-24.04
+  Ubuntu 系统磁盘：E:\WSL\Ubuntu-24.04\ext4.vhdx
+  Linux 普通用户：l
+  Linux 开发工作区：/home/l/ros2_ws
+  ROS 安装目录：/opt/ros/jazzy
+  安装日志：本文件旁的“安装输出.log”；Linux 内 /var/log/ros2-jazzy-setup.log
+  收尾日志：本文件旁的“依赖初始化输出.log”
+
+可选：设置 Linux 密码
+  当前按用户选择暂不设置密码。通过 WSL 进入、运行 ROS2、编译项目无需密码。
+  将来需要使用 sudo 安装软件时，双击“设置Linux密码.cmd”为 l 设置自己的 Linux 密码。
+  输入密码时不会显示字符，这是正常现象。密码不需要提供给聊天助手。
+  该用户属于 sudo、dialout 和 video 组；未设置密码前不启用密码登录或免密 sudo。
+
+进入环境
+  双击“启动ROS2.cmd”。
+  或在 PowerShell 输入：
+    wsl -d Ubuntu-24.04 -u l --cd ~
+  每个交互式 Bash 终端会自动加载 ROS2 Jazzy。
+
+检查环境（在 Ubuntu 终端中运行）
+  printenv ROS_DISTRO
+  ros2 --help
+  cd ~/ros2_ws
+  colcon build --symlink-install
+
+节点通信示例
+  第一个 Ubuntu 终端：
+    ros2 run demo_nodes_cpp talker
+  第二个 Ubuntu 终端：
+    ros2 run demo_nodes_py listener
+  按 Ctrl+C 停止当前终端中的示例节点。
+
+图形工具
+  rviz2
+  ros2 run turtlesim turtlesim_node
+
+项目存放
+  ROS 包的源代码建议放在 ~/ros2_ws/src，以便在 Linux 文件系统中编译。
+  这个 Linux 文件系统本身存储在 E 盘的 ext4.vhdx 内。
+  当前 Windows 项目目录可在 Ubuntu 中通过 /mnt/e/迈瑞博 访问。
+  请勿在 Windows 资源管理器中直接编辑或移动正在使用的 ext4.vhdx 文件。
+
+与当前 TULA 项目的关系
+  本次配置的是 ROS2 开发环境，没有连接电机或执行运动。
+  当前 Windows td201.dll 不能由 Linux Python 直接加载。
+  真实 TULA 接入需要另外开发 ROS2 节点，并完成 Linux 驱动适配或 Windows 通信桥接。
+
+ROS 依赖管理
+  rosdep 已在安装流程中初始化，用户缓存存放于 ~/.ros/rosdep。
+  新增 ROS 包后可在 ~/ros2_ws 中运行：
+    rosdep install --from-paths src --ignore-src -r -y --rosdistro jazzy
+
+软件源
+  Ubuntu 和 ROS2 软件包使用清华大学 HTTPS 镜像，保留官方软件包签名校验。
+  rosdep 使用清华 rosdistro 镜像，配置在 ~/.config/rosdistro/config.yaml。
+  此环境仅面向 Jazzy，未启用 ROS1 Fuerte 的旧依赖索引。
+  初始 apt 软件源备份在 /var/backups/ros2-jazzy-setup/。
+
+官方参考
+  https://learn.microsoft.com/windows/wsl/basic-commands
+  https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html

@@ -1,0 +1,16 @@
+{
+  "archive": "/mnt/e/\u8fc8\u745e\u535a/\u7a0b\u5e8f\u6587\u4ef6/TULA_Robot_Workspace.zip",
+  "source": "/home/l/lerobot_workspace/lerobot",
+  "source_version": "0.6.2",
+  "files_extracted": 1341,
+  "pyproject_sha256": "d5624a21c560b5b51be7f921b858f122b313255ef2caee0d8a983a23605f4fee",
+  "uv_lock_sha256": "13e2cadb2712eb828d10a059edbf096f99c92fd1b5f4bec1a244d7080904118a",
+  "excluded": [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__"
+  ]
+}

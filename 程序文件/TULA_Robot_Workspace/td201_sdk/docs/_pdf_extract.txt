@@ -1,0 +1,133 @@
+﻿
+--- page 1 ---
+Research & Development 
+Center
+2017.06.13TD-201 PC Manager 
+MANUAL
+1
+--- page 2 ---
+Revision History 
+Version Date Changes StatusAuthor/Approver
+12015/05/13 First revision draftJongmin choi
+22015/11/26 Second revision draftJongminchoi
+32017/06/13 Third revision draftDoeunkim
+-The information is subject to change without notice for technical improvement.
+2
+--- page 3 ---
+CONTENTS 
+1.Introduction
+2.USB to Serial Driver Setup
+3.How to Install OCX
+4.Serial Port setting
+5.Configuration
+6.Move to Position(PTP)
+7.Open-Loop Control
+8.Contact Information
+3
+--- page 4 ---
+1. INTRODUCTION 
+1.This user manual provides information about the PC manager of TD -201
+2.Reference documents
+-TD-201 Technical description _Vxxx.pdf
+-TD-201 UART Command reference manual _Vxxx.pdf
+J1:Power 5V,2A
+J3:Motor 1J4:Motor 2 J6:Encoder 1 J8:Encoder 2J5:USBJ2:RS-232
+--- page 5 ---
+2. USB to SERIAL Driver Setup
+1.Execute the 鈥淐DM 2.04.06.exe 鈥漷hat is attached
+2. You can download the file in this website (http://www.ftdichip.com)
+3. Once the attached file is executed, you don 鈥檛 need to execute it
+5
+--- page 6 ---
+3. How to Install OCX
+2. Windows 7, 832bit
+-Step1: Copy 鈥渟trips.ocx鈥漚nd 鈥渋nstall.bat鈥漷o 鈥淐:楼Windows楼system32.鈥?
+COPY
+-Step2: Run 鈥渋nstall.bat鈥漣n administrator privileges mode which is selected 
+using right-click of mouse.1.Windows XP
+-Step1: Run 鈥渋nstall.bat鈥?
+6
+--- page 7 ---
+3. Windows 7, 8  64bit
+-Step1: Copy 鈥渟trips.ocx鈥漚nd 鈥渋nstall.bat鈥漷o 鈥淐:楼Windows楼SysWOW64. 鈥?
+COPY
+-Step2: Run 鈥渋nstall.bat鈥漣n administrator privileges mode which is selected 
+using right-click of mouse.
+7
+
+--- page 8 ---
+4. Serial Port Setting
+Step1: Click 鈥淧ort鈥漣con on 
+menu bar
+Step2: Select the proper 
+COM-port
+Step3: Click [OK]
+8
+
+--- page 9 ---
+5. Configuration
+-[Address]: Select the address 
+-[RS485]:Define the received data on/off 
+of the RS-485
+-[TULA Series]:Define the motor type
+-[Encoder Type]:Define the encoder type 
+-[Resolution]:Define the resolution of 
+encoder
+-[Reference Frequency]:Define the driving 
+frequency
+-[Voltage]:Define the voltage
+-[Encoder invert direction]:Swap Encoder 
+A/B inputs
+-[Motor invert direction]:Define the 
+motor current direction
+-[Configuration]:Configuration commands 
+input
+-[Auto-Tuning]:Automatic tuning
+-[STOP]:Aborts the motion immediately.
+-[Get-Information]:Reports the internal 
+setting of controller9
+
+--- page 10 ---
+6. Move to Position(PTP)
+-[Display_1,2]: During motion, the motion 
+status can be continuously monitored.
+-Red = Target Step.
+-Blue = Current Step.
+-[+]: Zoom in
+-[-]: Zoom out
+-[R]: Reset to the scale
+-[Home]: Move to the home position.
+-[Target]: Move to the absolute target 
+position. The target position can be 
+specified absolute position, using the 
+absolute position parameter.
+-[<Step Rev],[Step Fwd>]: Move to the 
+relative target position. The target 
+position can be specified relatively to 
+the current desired position, using the 
+relative position parameter.
+-[STOP]: Aborts the motion immediately.
+-[Get-Position]: Reports the actual 
+controller position.(Encoder value)
+10
+
+--- page 11 ---
+7. Open -Loop Control
+-[Frequency]: Define the driving 
+frequency (20~100kHz)
+-[Duty]: Define the duty(1~48%)
+-[Volt]: Define the voltage(16~35Vdc)
+-[Time]: Time Duration.
+-[Pulse]: Pulse Duration.
+-[Duration]: The moving on -time.
+-[Interval]: The time between the start of 
+each step.
+-[Steps]: The optional number of run.
+-[<Reverse]: Motor runs in reverse.
+-[Forward>]: Motor runs forward.
+-[<Bi>]:  Move to both direction.
+-[Stop]: Aborts the motion immediately
+11
+
+
+... total chars 3543

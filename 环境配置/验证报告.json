@@ -1,0 +1,33 @@
+{
+  "user": {
+    "exit_code": 0,
+    "output": "uid=1000(l) gid=1000(l) groups=1000(l),20(dialout),27(sudo),44(video),100(users)\n"
+  },
+  "environment": {
+    "ROS_DISTRO": "jazzy",
+    "DISPLAY": ":0",
+    "WAYLAND_DISPLAY": "wayland-0"
+  },
+  "rclpy": {
+    "exit_code": 0,
+    "output": "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py\n"
+  },
+  "packages": {
+    "exit_code": 0,
+    "output": "python3-colcon-common-extensions\t0.3.0-100\nros-dev-tools\t1.0.3\nros-jazzy-desktop\t0.11.0-1noble.20261006.040109\nros-jazzy-rviz2\t14.1.24-1noble.20260915.204213\n"
+  },
+  "graphics": {
+    "exit_code": 0,
+    "output": "name of display: :0\ndisplay: :0  screen: 0\ndirect rendering: Yes\nExtended renderer info (GLX_MESA_query_renderer):\n    Vendor: Mesa (0xffffffff)\n    Device: llvmpipe (LLVM 20.1.2, 256 bits) (0xffffffff)\n    Version: 25.2.8\n    Accelerated: no\n    Video memory: 15631MB\n    Unified memory: yes\n    Preferred profile: core (0x1)\n    Max core profile version: 4.5\n    Max compat profile version: 4.5\n    Max GLES1 profile version: 1.1\n    Max GLES[23] profile version: 3.2\nMemory info (GL_ATI_meminfo):\n    VBO free memory - total: 0 MB, largest block: 0 MB\n    VBO free aux. memory - total: 14557 MB, largest block: 14557 MB\n    Texture free memory - total: 0 MB, largest block: 0 MB\n    Texture free aux. memory - total: 14557 MB, largest block: 14557 MB\n    Renderbuffer free memory - total: 0 MB, largest block: 0 MB\n    Renderbuffer free aux. memory - total: 14557 MB, largest block: 14557 MB\nMemory info (GL_NVX_gpu_memory_info):\n    Dedicated video memory: 0 MB\n    Total available memory: 15631 MB\n    Currently available dedicated video memory: 0 MB\nOpenGL vendor string: Mesa\nOpenGL renderer string: llvmpipe (LLVM 20.1.2, 256 bits)\nOpenGL core profile version string: 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4\nOpenGL core profile shading language version string: 4.50\nOpenGL core profile context flags: (none)\nOpenGL core profile profile mask: core profile\n\nOpenGL version string: 4.5 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.24.04.4\nOpenGL shading language version string: 4.50\nOpenGL context flags: (none)\nOpenGL profile mask: compatibility profile\n\nOpenGL ES profile version string: OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.4\nOpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.20\n\n"
+  },
+  "pub_sub": {
+    "passed": true,
+    "talker_log": "[WARN] [1794667366.164918715] [rcl]: ROS_LOCALHOST_ONLY is deprecated but still honored if it is enabled. Use ROS_AUTOMATIC_DISCOVERY_RANGE and ROS_STATIC_PEERS instead.\n[WARN] [1794667366.164945522] [rcl]: 'localhost_only' is enabled, 'automatic_discovery_range' and 'static_peers' will be ignored.\n[INFO] [1794667367.189004619] [talker]: Publishing: 'Hello World: 1'\n",
+    "listener_log": "[WARN] [1794667366.432571783] [rcl]: ROS_LOCALHOST_ONLY is deprecated but still honored if it is enabled. Use ROS_AUTOMATIC_DISCOVERY_RANGE and ROS_STATIC_PEERS instead.\n[WARN] [1794667366.432593781] [rcl]: 'localhost_only' is enabled, 'automatic_discovery_range' and 'static_peers' will be ignored.\n[INFO] [1794667367.202248783] [listener]: I heard: [Hello World: 1]\n"
+  },
+  "rviz": {
+    "running_after_10s": true,
+    "renderer_initialized": true,
+    "log": "[WARN] [1794667368.131961689] [rcl]: ROS_LOCALHOST_ONLY is deprecated but still honored if it is enabled. Use ROS_AUTOMATIC_DISCOVERY_RANGE and ROS_STATIC_PEERS instead.\n[WARN] [1794667368.132003439] [rcl]: 'localhost_only' is enabled, 'automatic_discovery_range' and 'static_peers' will be ignored.\n[INFO] [1794667368.341593703] [rviz2]: Stereo is NOT SUPPORTED\n[INFO] [1794667368.341660356] [rviz2]: OpenGl version: 4.5 (GLSL 4.5)\n[INFO] [1794667368.425629260] [rviz2]: Stereo is NOT SUPPORTED\n"
+  }
+}

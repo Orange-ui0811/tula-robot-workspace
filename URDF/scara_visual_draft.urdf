@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="scara_visual_DRAFT">
+  <!--VISUALIZATION ONLY. CAD pose is a temporary zero. Display ranges are NOT measured limits. effort=velocity=0 are deliberate unusable placeholders. No dynamics, collision model, or hardware interfaces.-->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/base_link.stl" />
+      </geometry>
+      <material name="base_link_color">
+        <color rgba="0.6509803922 0.6862745098 0.737254902 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="arm1_link">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm1_link.stl" />
+      </geometry>
+      <material name="arm1_link_color">
+        <color rgba="0.1803921569 0.5058823529 0.8196078431 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="arm2_link">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/arm2_link.stl" />
+      </geometry>
+      <material name="arm2_link_color">
+        <color rgba="0.2078431373 0.6588235294 0.5764705882 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="lift_link">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/lift_link.stl" />
+      </geometry>
+      <material name="lift_link_color">
+        <color rgba="0.8745098039 0.6235294118 0.1960784314 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="wrist_link">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/wrist_link.stl" />
+      </geometry>
+      <material name="wrist_link_color">
+        <color rgba="0.631372549 0.4196078431 0.7607843137 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="joint_1" type="revolute">
+    <parent link="base_link" />
+    <child link="arm1_link" />
+    <origin xyz="-2.818925648e-18 1.270549421e-21 0.05000000003" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.141592653589793" upper="3.141592653589793" effort="0" velocity="0" />
+  </joint>
+  <joint name="joint_2" type="revolute">
+    <parent link="arm1_link" />
+    <child link="arm2_link" />
+    <origin xyz="0.032 3.388131789e-21 0.0102" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.141592653589793" upper="3.141592653589793" effort="0" velocity="0" />
+  </joint>
+  <joint name="joint_3" type="prismatic">
+    <parent link="arm2_link" />
+    <child link="lift_link" />
+    <origin xyz="0.02462858149 0.001027362531 -0.002650113275" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.005" upper="0.005" effort="0" velocity="0" />
+  </joint>
+  <joint name="joint_4" type="revolute">
+    <parent link="lift_link" />
+    <child link="wrist_link" />
+    <origin xyz="0.01598609752 0.0006668478903 0.005" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.141592653589793" upper="3.141592653589793" effort="0" velocity="0" />
+  </joint>
+</robot>

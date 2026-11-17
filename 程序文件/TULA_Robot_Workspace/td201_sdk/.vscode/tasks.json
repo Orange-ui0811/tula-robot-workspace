@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build td201 DLL",
+            "command": "gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-shared",                                       // 声明生成动态链接库
+                "-I${workspaceFolder}/hardware/include",         // 指定驱动头文件目录
+                "${workspaceFolder}/hardware/src/td201.c",       // 驱动源码 1
+                "${workspaceFolder}/hardware/src/tula50.c",      // 驱动源码 2
+                "-o",
+                "${workspaceFolder}/hardware/libs/td201.dll",   // Python 正式加载位置
+                "-Wl,--out-implib,${workspaceFolder}/hardware/libs/libtd201.a"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "生成 hardware/libs/td201.dll 和 libtd201.a"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Build C Test Executable",
+            "command": "gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-I${workspaceFolder}/hardware/include",         // 引入硬件驱动头文件
+                "${workspaceFolder}/tests/test_hardware_c.c",
+                "${workspaceFolder}/hardware/src/td201.c",       // 静态链接底层驱动逻辑
+                "${workspaceFolder}/hardware/src/tula50.c",
+                "-o",
+                "${workspaceFolder}/tests/test_hardware_c.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build"
+            },
+            "detail": "直接编译 SDK 与 tests/test_hardware_c.c；不运行 EXE"
+        }
+    ]
+}

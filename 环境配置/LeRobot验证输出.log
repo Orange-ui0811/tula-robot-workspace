@@ -1,0 +1,80 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+gpu_act_training_and_inference True
+ffmpeg_torchcodec True
+
+Map:   0%|          | 0/5 [00:00<?, ? examples/s]
+Map: 100%|██████████| 5/5 [00:00<00:00, 1478.95 examples/s]
+local_dataset_roundtrip True
+pusht_simulation True
+cli_entry_points True
+{
+  "checks": {
+    "gpu_act_training_and_inference": {
+      "passed": true,
+      "details": {
+        "torch": "2.15.0+cu132",
+        "torchvision": "0.29.2+cu132",
+        "cuda_runtime": "13.2",
+        "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "gpu_architectures": [
+          "sm_75",
+          "sm_80",
+          "sm_86",
+          "sm_90",
+          "sm_100",
+          "sm_120"
+        ],
+        "act_training_loss": 1.0322659015655518,
+        "action_shape": [
+          2,
+          2
+        ],
+        "note": "Tiny randomly initialized ACT; installation check, not a trained policy."
+      }
+    },
+    "ffmpeg_torchcodec": {
+      "passed": true,
+      "details": {
+        "torchcodec": "0.17.0+cpu",
+        "decoded_shape": [
+          2,
+          3,
+          64,
+          64
+        ]
+      }
+    },
+    "local_dataset_roundtrip": {
+      "passed": true,
+      "details": {
+        "frames": 5,
+        "action_shape": [
+          2
+        ],
+        "hub_upload": false
+      }
+    },
+    "pusht_simulation": {
+      "passed": true,
+      "details": {
+        "environment": "gym_pusht/PushT-v0",
+        "image_shape": [
+          680,
+          680,
+          3
+        ]
+      }
+    },
+    "cli_entry_points": {
+      "passed": true,
+      "details": {
+        "lerobot-info": 0,
+        "lerobot-train": 0,
+        "lerobot-record": 0,
+        "lerobot-eval": 0
+      }
+    }
+  },
+  "lerobot_version": "0.6.2",
+  "passed": true
+}

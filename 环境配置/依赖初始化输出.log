@@ -1,0 +1,41 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+STEP 5/6: Initialize rosdep
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   588  100   588    0     0   4826      0 --:--:-- --:--:-- --:--:--  4859
+reading in sources list data from /etc/ros/rosdep/sources.list.d
+Hit https://mirrors.tuna.tsinghua.edu.cn/rosdistro/rosdep/osx-homebrew.yaml
+Hit https://mirrors.tuna.tsinghua.edu.cn/rosdistro/rosdep/base.yaml
+Hit https://mirrors.tuna.tsinghua.edu.cn/rosdistro/rosdep/python.yaml
+Hit https://mirrors.tuna.tsinghua.edu.cn/rosdistro/rosdep/ruby.yaml
+Query rosdistro index https://mirrors.tuna.tsinghua.edu.cn/rosdistro/index-v4.yaml
+Skip distro "ardent" different from requested "jazzy"
+Skip distro "bouncy" different from requested "jazzy"
+Skip distro "crystal" different from requested "jazzy"
+Skip distro "dashing" different from requested "jazzy"
+Skip distro "eloquent" different from requested "jazzy"
+Skip distro "foxy" different from requested "jazzy"
+Skip distro "galactic" different from requested "jazzy"
+Skip distro "groovy" different from requested "jazzy"
+Skip distro "humble" different from requested "jazzy"
+Skip distro "hydro" different from requested "jazzy"
+Skip distro "indigo" different from requested "jazzy"
+Skip distro "iron" different from requested "jazzy"
+Skip distro "jade" different from requested "jazzy"
+Add distro "jazzy"
+Skip distro "kilted" different from requested "jazzy"
+Skip distro "kinetic" different from requested "jazzy"
+Skip distro "lunar" different from requested "jazzy"
+Skip distro "lyrical" different from requested "jazzy"
+Skip distro "melodic" different from requested "jazzy"
+Skip distro "noetic" different from requested "jazzy"
+Skip distro "rolling" different from requested "jazzy"
+updated cache in /home/l/.ros/rosdep/sources.cache
+STEP 6/6: Record package versions
+python3-colcon-common-extensions	0.3.0-100
+ros-dev-tools	1.0.3
+ros-jazzy-desktop	0.11.0-1noble.20261006.040109
+ros-jazzy-rviz2	14.1.24-1noble.20260915.204213
+ROS2_JAZZY_INSTALL_COMPLETE

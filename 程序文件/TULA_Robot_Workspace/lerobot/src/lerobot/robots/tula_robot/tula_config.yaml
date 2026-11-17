@@ -1,0 +1,7 @@
+port: "COM5"
+baudrate: 115200
+active_axes: [1, 2]
+action_limits:
+  joint_1: [-90.0, 90.0]
+  joint_2: [-90.0, 90.0]
+  

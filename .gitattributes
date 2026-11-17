@@ -1,0 +1,11 @@
+# Preserve delivery files and their original line endings.
+* -text
+*.stl filter=lfs diff=lfs merge=lfs -text
+*.pdf binary
+*.xlsx binary
+*.zip binary
+*.exe binary
+*.dll binary
+*.a binary
+
+# The LeRobot snapshot retains its own upstream LFS rules.

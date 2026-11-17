@@ -1,0 +1,56 @@
+LeRobot Linux 开发环境
+
+版本与位置
+  WSL 发行版：Ubuntu-24.04（系统磁盘在 E:\WSL\Ubuntu-24.04）
+  用户：l
+  工作区：/home/l/lerobot_workspace
+  LeRobot 源码：/home/l/lerobot_workspace/lerobot
+  Python 虚拟环境：/home/l/lerobot_workspace/lerobot/.venv
+  Hugging Face 缓存：/home/l/lerobot_workspace/cache/huggingface
+  版本：现有项目中的 LeRobot 0.6.2，本地源码可编辑安装。
+  依赖：沿用源码的 uv.lock，启用 core_scripts、training、pusht。
+  原始 Windows .venv、.git 和 Python 缓存未复制进 Linux 环境。
+  源码来源及哈希：工作区下 source-origin.json。
+
+启动
+  在 Windows 中双击本文件旁的“启动LeRobot.cmd”。
+  或先进入 Ubuntu，再执行：
+    source /home/l/lerobot_workspace/activate.sh
+
+常用命令（在 LeRobot 专用终端中）
+  uv run --no-sync lerobot-info
+  uv run --no-sync lerobot-train --help
+  uv run --no-sync lerobot-record --help
+  uv run --no-sync lerobot-eval --help
+
+ROS2
+  ROS2 继续使用“启动ROS2.cmd”。LeRobot 有独立 Python 环境。
+  LeRobot 的启动脚本会清除当前终端中的 PYTHONPATH/PYTHONHOME，避免混入 ROS2 Python 包。
+  这不会修改 ROS2 的安装文件或其他终端。
+
+检查安装
+  uv run --no-sync python /mnt/e/迈瑞博/环境配置/verify_lerobot_linux.py
+  检查脚本只做离线验证：小型随机 ACT 的 GPU 训练/推理、视频读写、
+  本地数据集存取、PushT 仿真和 CLI 入口，不连接电机，不上传模型或数据。
+  结果存放于 /home/l/lerobot_workspace/validation。
+  installed-requirements.txt 记录实际安装的软件包版本。
+
+后续增加功能
+  在源码目录使用 uv sync --locked --extra ... 会按锁文件同步环境。
+  请同时保留已有的 --extra core_scripts --extra training --extra pusht，
+  否则 uv sync 可能移除不再选择的可选依赖。
+  日常运行使用 uv run --no-sync，以保留已安装的功能组合。
+
+TULA 设备接入范围
+  此环境用于 LeRobot 开发、数据处理、训练和仿真。
+  当前 TULA 插件随附的 td201.dll 是 Windows 库，不能直接在 Linux Python 中使用。
+  真实设备接入还需要 Linux 驱动适配或 Windows 通信桥接，以及单独的实机验证。
+  本次没有安装 Windows TULA 插件、连接设备或执行电机动作。
+
+数据与模型
+  安装本身不需要 Hugging Face 登录。
+  尚未下载大型预训练模型或真实机器人数据集。
+  以后下载数据、训练输出和检查点会继续占用 E 盘空间。
+
+官方说明
+  https://huggingface.co/docs/lerobot/installation

@@ -1,0 +1,34 @@
+# Local credentials and machine-specific state
+.env
+.env.*
+!.env.example
+!.env.*.example
+.private/
+.ssh/
+.aws/
+.codex/
+*.pem
+*.key
+
+# Rebuildable environments, caches and temporary files
+.venv/
+.venv-*/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.idea/
+tmp/
+build/
+dist/
+Thumbs.db
+.DS_Store
+
+# Original delivery archives remain local. Sanitized source is tracked below.
+/程序文件/TULA_Robot_Workspace.zip
+/程序文件/TULA_Python_Test_Windows.zip

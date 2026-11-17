@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lerobot_robot_tula"
+version = "0.1.0"
+description = "Tula TD-201 robot plugin for LeRobot"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["lerobot>=0.6.2,<0.7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+lerobot_robot_tula = ["libs/windows-x86_64/td201.dll"]
